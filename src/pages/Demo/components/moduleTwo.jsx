@@ -26,6 +26,7 @@ const ModuleTwo = () => {
           <HeroImage
           img={module2.imageUrl}
           title={module2.title}
+          subtext={module2.subtitle}
           button={{ text: module2.linkTitle, link: module2.linkUrl }}
           />
         </Box>

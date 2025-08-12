@@ -22,7 +22,7 @@ import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 const CardContainer = ({ img, title, description }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, maxHeight: 325 }}>
       <CardMedia component="img" height="200" image={img} alt={title} />
       <CardContent>
         <Typography variant="h6" gutterBottom>

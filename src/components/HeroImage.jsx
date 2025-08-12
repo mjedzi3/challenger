@@ -10,6 +10,7 @@ import { Box, Typography, Button, Link } from "@mui/material";
  * Props:
  * @param {string} img - The URL of the background image.
  * @param {string} title - The main heading text displayed over the image.
+ * @param {string} subtext - Smaller descriptive text below the title.
  * @param {object} button - (Optional) Contains button text and link.
  *    @param {string} button.text - The text displayed on the button.
  *    @param {string} button.link - The URL the button directs to.
@@ -21,12 +22,11 @@ import { Box, Typography, Button, Link } from "@mui/material";
  *    button={{ text: "Learn More", link: "#" }} 
  * />
  */
-const HeroImage = ({ img, title, button }) => {
+const HeroImage = ({ img, title, subtext, button }) => {
   return (
     <Box
       sx={{
         position: "relative",
-        width: "100%",
         height: "400px",
         backgroundImage: `url(${img})`,
         backgroundSize: "cover",
@@ -53,6 +53,16 @@ const HeroImage = ({ img, title, button }) => {
         <Typography variant="h3" fontWeight="bold" gutterBottom>
           {title}
         </Typography>
+
+        {subtext && (
+          <Typography
+            variant="h6"
+            sx={{ opacity: 0.85, mb: button ? 2 : 0 }}
+          >
+            {subtext}
+          </Typography>
+        )}
+
         {button && (
           <Button
             component={Link}
